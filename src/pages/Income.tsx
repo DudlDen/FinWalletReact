@@ -1,12 +1,11 @@
 import React, {useContext, useEffect, useState} from 'react';
 import styles from "./css/wallet.css";
-import {deleteAllIncome, deleteFiveIncome, fetchFiveIncome, fetchIncome, fetchValueIncome} from "../http/incomeApi";
+import {deleteAllIncome,fetchIncome} from "../http/incomeApi";
 import {useParams} from "react-router";
 import {Context} from "../App";
 import {Button} from "react-bootstrap";
 import {observer} from "mobx-react-lite";
 import {ModalAddIncome} from "../component/ModalAddIncome";
-import {ModalUpdateWallet} from "../component/ModalUpdateWallet";
 import {ModalUpdateIncome} from "../component/ModalUpdateIncome";
 import {useNavigate} from "react-router-dom";
 import {WALLET_ROUTE} from "../Utils/consts";
@@ -43,7 +42,6 @@ const Income = observer(() => {
     function onCloseUpg() {
         setIsUpgIncome(false)
     }
-    const [valueWallet, setValueWallet] = useState(0)
     useEffect(() => {
         wallet?.setIsHeaderBtn({name:'expensesAndIncome',path:WALLET_ROUTE+'/'+params.walletId})
 

@@ -5,9 +5,7 @@ import Functional from "./pages/Functional";
 import Auth from "./pages/Auth";
 import WalletList from "./pages/WalletList";
 import {
-    EXPENSES_ROUTE,
     FUNCTIONAL_ROUTE,
-    INCOME_ROUTE,
     LOGIN_ROUTE,
     REGISTRATION_ROUTE,
     WALLET_ROUTE

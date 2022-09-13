@@ -1,8 +1,8 @@
 import express from 'express';
 import reactDom from 'react-dom/server'
 import { indexTemplate } from "./indexTemplate";
-import {App} from "../client/src/App";
-import base from "../client/src/bd";
+import {App} from "../App";
+import base from "../bd";
 import {Expenses, Income, User, Wallet} from "./models/models";
 import cors from 'cors'
 const PORT = process.env.PORT || 3000;

@@ -1,4 +1,4 @@
-import base from "../../client/src/bd";
+import base from "../../bd";
 import {DataTypes} from "sequelize";
 
 export const User = base.define('user',{

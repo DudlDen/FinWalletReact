@@ -1,4 +1,4 @@
-import {$host, $authHost} from "./index";
+import { $authHost} from "./index";
 export const createExpenses = async (walletId,name,value) => {
     const {data} = await $authHost.post('api/expenses/'+walletId, {name,value})
     return data
@@ -21,11 +21,6 @@ export const fetchValueExpenses = async (walletId) => {
 
 export const deleteAllExpenses = async (walletId,id) => {
     const {data} = await $authHost.delete('api/expenses/all/'+walletId+"/"+id)
-    return data
-}
-
-export const deleteFiveExpenses = async (walletId,id) => {
-    const {data} = await $authHost.delete('api/expenses/five/'+walletId+"/"+id)
     return data
 }
 

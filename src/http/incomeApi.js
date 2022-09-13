@@ -1,4 +1,4 @@
-import {$host, $authHost} from "./index";
+import { $authHost} from "./index";
 export const createIncome = async (walletId,name,value) => {
     const {data} = await $authHost.post('api/income/'+walletId, {name,value})
     return data
@@ -21,11 +21,6 @@ export const fetchValueIncome = async (walletId) => {
 
 export const deleteAllIncome = async (walletId,id) => {
     const {data} = await $authHost.delete('api/income/all/'+walletId+"/"+id)
-    return data
-}
-
-export const deleteFiveIncome = async (walletId,id) => {
-    const {data} = await $authHost.delete('api/income/five/'+walletId+"/"+id)
     return data
 }
 

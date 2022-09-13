@@ -1,18 +1,14 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {useParams} from "react-router";
-import {deleteWallet, fetchOneWallets} from "../http/walletApi";
 import {observer} from "mobx-react-lite";
 import {Context} from "../App";
-import {Link, useNavigate} from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import {WALLET_ROUTE} from "../Utils/consts";
 import {Button} from "react-bootstrap";
-import {deleteFiveIncome, fetchFiveIncome, fetchIncome} from "../http/incomeApi";
+import { fetchFiveIncome} from "../http/incomeApi";
 import styles from './css/wallet.css';
-import {fetchExpenses, fetchFiveExpenses} from "../http/expensesApi";
+import { fetchFiveExpenses} from "../http/expensesApi";
 
-interface IWallet {
-    walletId:number
-}
 
 const Wallet = observer(() => {
     const params = useParams()
