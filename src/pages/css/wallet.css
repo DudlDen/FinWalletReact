@@ -1,0 +1,48 @@
+.listItem{
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 20px;
+    padding: 10px 30px;
+    width: 100%;
+    outline: 1px solid #6c757d;
+}
+.box{
+    display: flex;
+    justify-content: center;
+}
+.list{
+    display: flex;
+    margin: 10px;
+}
+
+.editBtn{
+    padding-right: 10px;
+    padding-left: 10px;
+    font-family: sans-serif;
+    font-size: 14px;
+    color: #0d6efd;
+    outline: 1px solid #0d6efd;
+}
+.delBtn{
+    padding-right: 10px;
+    padding-left: 10px;
+    font-family: sans-serif;
+    font-size: 14px;
+    color: #dc3545;
+    outline: 1px solid #dc3545;
+}
+
+.editBtn:hover{
+    color: white;
+    background-color: #0d6efd;
+}
+
+.delBtn:hover{
+    color: white;
+    background-color: #dc3545;
+}
+
+.btnBox{
+    width: 100%;
+    text-align: center;
+}

@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {createContext} from "react";
+import './main.global.css';
+import {hot} from "react-hot-loader/root";
+import {generateId} from "./Utils/react/generateRandomIndex";
+import {BrowserRouter} from 'react-router-dom'
+import timerStore from "./timerStore";
+import AppRouter from "./component/AppRouter";
+import UserStore from "./store/UserStore";
+import RootApp from "./RootApp";
+import WalletStore from "./store/WalletStore";
+interface IContext{
+    user: UserStore,
+    wallet: WalletStore
+}
+export const Context = createContext<IContext| null>(null)
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+setInterval(() => {
+    timerStore.increase()
+}, 1000)
+
+
+const LIST = [
+    {value:'some'},
+    {value:'some1'},
+    {value:'some2'},
+].map(generateId)
+
+
+function AppComponent() {
+    return(
+        <Context.Provider value={{user: new UserStore(),wallet: new WalletStore()}}>
+            <RootApp/>
+        </Context.Provider>
+    );
 }
 
-export default App;
+export const App = hot(AppComponent);
+
+
